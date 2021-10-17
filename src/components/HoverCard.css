@@ -1,0 +1,11 @@
+.hoverCard__container {
+    position: absolute;
+    margin-top: 30px;
+    /* top: 30px; */
+    left: -20px;
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    border: 1px solid grey;
+}

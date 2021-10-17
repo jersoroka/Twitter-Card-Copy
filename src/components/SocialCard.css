@@ -112,6 +112,8 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     column-gap: 3px;
+    position: relative;
+    border: 1px solid black;
 }
 
 .card__header-identity:hover > .card__header-name {
