@@ -23,7 +23,7 @@ export const SocialCard = () => {
                         <div className="card__header-text">{handle}</div>
                     </div>
                     <FaCircle className="card__header-text card__header-circle"/>
-                    <div className="card__header-text">{shortDate}</div>
+                    <div className="card__header-text card__header-date">{shortDate}</div>
                 </div>
                 <div><BsThreeDots className="card__header-options"/></div>
             </div>

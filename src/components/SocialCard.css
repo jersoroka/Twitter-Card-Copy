@@ -104,6 +104,10 @@
     align-self: center;
 }
 
+.card__header-date:hover {
+    text-decoration: underline;
+}
+
 .card__header-identity {
     display: grid;
     grid-template-columns: repeat(3, auto);
