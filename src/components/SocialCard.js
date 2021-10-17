@@ -1,17 +1,14 @@
 import React, {useContext, useState} from 'react';
 import "./SocialCard.css";
-import { GoVerified } from "react-icons/go";
-import { BsThreeDots } from "react-icons/bs";
-import { FaCircle } from "react-icons/fa";
 import displayPicture from '../images/stephen-a-smith-profile.jpg'
 import { GlobalContext } from '../context/GlobalContext';
 import { HoverCard } from "./HoverCard";
+import { Header } from "./Header"
 import { Footer } from "./Footer";
 
 export const SocialCard = () => {
 
-    const {name, handle, isVerified, tweets} = useContext(GlobalContext)
-    const shortDate = tweets[0].date.split(/,| /).slice(3, 5).join(" ");
+    const {tweets} = useContext(GlobalContext)
     
     const [isHovering, setIsHovering] = useState(false);
     const [isHeaderHovering, setIsHeaderHovering] = useState(false);
@@ -56,21 +53,10 @@ export const SocialCard = () => {
                 onMouseOver={() => handleMouseOver("card__profile")} 
                 onMouseLeave={() => handleMouseLeave("card__profile")}/>
             {isHovering && !isHeaderHovering && <HoverCard handleMouseLeave={() => handleMouseLeave("card__profile")} position="hoverCard__profile"/>}
-            <div className="card__header">
-                <div className="card__header-info">
-                    <div className="card__header-identity" tag="card__hover"
-                        onMouseOver={() => handleMouseOver("card__header-identity")}
-                        onMouseLeave={() => handleMouseLeave("card__header-identity")}>
-                        <div className="card__header-name">{name}</div>
-                        {isVerified && <GoVerified className="card__header-verified"/>}
-                        <div className="card__header-text">{handle}</div>
-                    </div>
-                    {isHovering && isHeaderHovering && <HoverCard handleMouseLeave={() => handleMouseLeave("card__header-identity")} position="hoverCard__top"/>}
-                    <FaCircle className="card__header-text card__header-circle"/>
-                    <div className="card__header-text card__header-date">{shortDate}</div>
-                </div>
-                <div><BsThreeDots className="card__header-options"/></div>
-            </div>
+            <Header handleMouseOver={() => handleMouseOver("card__header-identity")} 
+                    handleMouseLeave={() => handleMouseLeave("card__header-identity")}
+                    isHovering={isHovering}
+                    isHeaderHovering={isHeaderHovering}/>
             <div className="card__body">{tweets[0].tweet}</div>
             <Footer/>
         </div>
