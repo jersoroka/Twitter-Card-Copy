@@ -10,7 +10,7 @@
     grid-template-columns: 70px 300px;
     row-gap: 3px;
     border: 1px solid lightgrey;
-    padding: 15px 15px 0px 15px;
+    padding: 10px 15px 0px 15px;
     width: 500px;
     position: relative;
 }
@@ -23,57 +23,6 @@
     grid-column: 2 / 4;
     grid-row: 2 / 3;
     font-size: 13px;
-}
-
-.card__header {
-    display: flex;
-    justify-content: space-between;
-    grid-column: 2 / 4;
-    grid-row: 1 / 2;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
-
-.card__header-circle {
-    width: 2px;
-    align-self: center;
-}
-
-.card__header-date:hover {
-    text-decoration: underline;
-}
-
-.card__header-identity {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    column-gap: 3px;
-}
-
-.card__header-identity:hover > .card__header-name {
-    text-decoration: underline;
-}
-
-.card__header-info {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    column-gap: 3px;
-}
-
-.card__header-name {
-    font-weight: bold;
-    font-size: 14px;
-    color: var(--twitter-black);
-}
-
-.card__header-text {
-    color: var(--twitter-dark-grey);
-    font-size: 13px;
-}
-
-.card__header-verified {
-    color: var(--twitter-blue);
-    align-self: center;
 }
 
 .card__profile {
