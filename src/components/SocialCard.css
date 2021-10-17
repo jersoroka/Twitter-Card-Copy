@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-:root {
-    --twitter-blue: rgb(29, 161, 242);
-    --twitter-black: rgb(20, 23, 26);
-    --twitter-dark-grey: rgb(101, 119, 134);
-    --twitter-light-grey: rgb(170, 184, 194);
-    --twitter-extra-light-grey: rgb(224, 232, 237);
-    --twitter-extra-extra-light-grey: rgb(245, 248, 250);
-}
-
 * {
     font-family: 'Roboto', sans-serif;
 }
@@ -21,6 +12,7 @@
     border: 1px solid lightgrey;
     padding: 15px 15px 0px 15px;
     width: 500px;
+    position: relative;
 }
 
 .card:hover {
@@ -33,63 +25,6 @@
     font-size: 13px;
 }
 
-.card__footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-row: 3 / 4;
-    grid-column: 2 / 4;
-    column-gap: 3px;
-}
-
-.card__footer>div {
-    display: grid;
-    grid-template-columns: 25px auto;
-    column-gap: 8px;
-    font-size: 12px;
-    color: var(--twitter-dark-grey);
-    align-items: center;
-}
-
-.card__footer>div:hover .card__footer-icon, .card__header-options:hover {
-    border-radius: 7px;
-}
-
-.card__footer-icon {
-    width: 18px;
-    height: 18px;
-    align-self: center;
-    justify-self: center;
-}
-
-.card__footer-comment:hover, .card__footer-share:hover, .card__header-options:hover {
-    color: var(--twitter-blue);
-}
-
-.card__footer-comment:hover > .card__footer-icon, 
-.card__footer-share:hover > .card__footer-icon,
-.card__header-options:hover {
-    box-shadow: inset 0px 0px 10px 5px rgb(29, 161, 242, 0.2),
-                0px 0px 3px 7px rgb(29, 161, 242, 0.2);
-}
-
-.card__footer-like:hover {
-    color: rgb(249, 24, 128);
-}
-
-.card__footer-like:hover > .card__footer-icon {
-    box-shadow: inset 0px 0px 10px 5px rgb(249, 24, 128, 0.2),
-    0px 0px 3px 7px rgb(249, 24, 128, 0.2);
-}
-
-.card__footer-retweet:hover {
-    color: rgb(0, 186, 124);
-}
-
-.card__footer-retweet:hover > .card__footer-icon {
-    box-shadow: inset 0px 0px 10px 5px rgb(0, 186, 124, 0.2),
-                    0px 0px 3px 7px rgb(0, 186, 124, 0.2);
-}
-
 .card__header {
     display: flex;
     justify-content: space-between;
@@ -97,6 +32,7 @@
     grid-row: 1 / 2;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
 .card__header-circle {
@@ -112,8 +48,6 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     column-gap: 3px;
-    position: relative;
-    border: 1px solid black;
 }
 
 .card__header-identity:hover > .card__header-name {

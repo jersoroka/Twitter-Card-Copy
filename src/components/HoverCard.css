@@ -1,11 +1,18 @@
 .hoverCard__container {
     position: absolute;
-    margin-top: 30px;
-    /* top: 30px; */
-    left: -20px;
     background-color: white;
     width: 250px;
     height: 250px;
     border-radius: 15px;
     border: 1px solid grey;
+}
+
+.hoverCard__profile {
+    top: 80px;
+    left: 15px;
+}
+
+.hoverCard__top {
+    top: 40px;
+    left: -10px;
 }
