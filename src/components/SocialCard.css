@@ -1,26 +1,150 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+    --twitter-blue: rgb(29, 161, 242);
+    --twitter-black: rgb(20, 23, 26);
+    --twitter-dark-grey: rgb(101, 119, 134);
+    --twitter-light-grey: rgb(170, 184, 194);
+    --twitter-extra-light-grey: rgb(224, 232, 237);
+    --twitter-extra-extra-light-grey: rgb(245, 248, 250);
+}
+
 * {
     font-family: 'Roboto', sans-serif;
 }
 
 .card {
     display: grid;
-    grid-template-rows: 30px auto 30px;
+    grid-template-rows: 30px auto 40px;
     grid-template-columns: 70px 300px;
+    row-gap: 3px;
     border: 1px solid lightgrey;
+    padding: 15px 15px 0px 15px;
+    width: 500px;
+}
+
+.card:hover {
+    background: var(--twitter-extra-extra-light-grey);
+}
+
+.card__body {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    font-size: 13px;
+}
+
+.card__footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row: 3 / 4;
+    grid-column: 2 / 4;
+    column-gap: 3px;
+}
+
+.card__footer>div {
+    display: grid;
+    grid-template-columns: 25px auto;
+    column-gap: 8px;
+    font-size: 12px;
+    color: var(--twitter-dark-grey);
+    align-items: center;
+}
+
+.card__footer>div:hover .card__footer-icon, .card__header-options:hover {
+    border-radius: 7px;
+}
+
+.card__footer-icon {
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    justify-self: center;
+}
+
+.card__footer-comment:hover, .card__footer-share:hover, .card__header-options:hover {
+    color: var(--twitter-blue);
+}
+
+.card__footer-comment:hover > .card__footer-icon, 
+.card__footer-share:hover > .card__footer-icon,
+.card__header-options:hover {
+    box-shadow: inset 0px 0px 10px 5px rgb(29, 161, 242, 0.2),
+                0px 0px 3px 7px rgb(29, 161, 242, 0.2);
+}
+
+.card__footer-like:hover {
+    color: rgb(249, 24, 128);
+}
+
+.card__footer-like:hover > .card__footer-icon {
+    box-shadow: inset 0px 0px 10px 5px rgb(249, 24, 128, 0.2),
+    0px 0px 3px 7px rgb(249, 24, 128, 0.2);
+}
+
+.card__footer-retweet:hover {
+    color: rgb(0, 186, 124);
+}
+
+.card__footer-retweet:hover > .card__footer-icon {
+    box-shadow: inset 0px 0px 10px 5px rgb(0, 186, 124, 0.2),
+                    0px 0px 3px 7px rgb(0, 186, 124, 0.2);
 }
 
 .card__header {
     display: flex;
     justify-content: space-between;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    align-items: center;
+    width: 100%;
+}
+
+.card__header-circle {
+    width: 2px;
+    align-self: center;
+}
+
+.card__header-identity {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 3px;
+}
+
+.card__header-identity:hover > .card__header-name {
+    text-decoration: underline;
+}
+
+.card__header-info {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 3px;
+}
+
+.card__header-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--twitter-black);
+}
+
+.card__header-text {
+    color: var(--twitter-dark-grey);
+    font-size: 13px;
+}
+
+.card__header-verified {
+    color: var(--twitter-blue);
+    align-self: center;
 }
 
 .card__profile {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
-    width: 60px;
+    width: 50px;
     border-radius: 50px;
+    border: 1px solid var(--twitter-dark-grey);
+}
+
+.card__profile:hover {
+    opacity: 0.8;
+    box-shadow: inset 0px 0px 5px 5px black;
 }
