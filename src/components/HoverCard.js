@@ -1,10 +1,12 @@
 import React from 'react'
 import "./HoverCard.css"
+import { motion } from "framer-motion";
 
 export const HoverCard = ({position, handleMouseLeave}) => {
     return (
-        <div className={"hoverCard__container " + position} onMouseLeave={handleMouseLeave}>
+        <motion.div className={"hoverCard__container " + position} onMouseLeave={handleMouseLeave}
+        animate={{ opacity: 1 }} transition={{ duration: 0.25 }}>
             
-        </div>
+        </motion.div>
     )
 }
