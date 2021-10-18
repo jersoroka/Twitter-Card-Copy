@@ -8,6 +8,11 @@
 
 .card__footer>div {
     display: grid;
+    grid-template-columns: auto auto;
+}
+
+.card__footer>div>div {
+    display: grid;
     grid-template-columns: 25px auto;
     column-gap: 8px;
     font-size: 12px;
@@ -26,31 +31,31 @@
     justify-self: center;
 }
 
-.card__footer-comment:hover, .card__footer-share:hover, .card__header-options:hover {
+.card__footer-comment-element:hover, .card__footer-share:hover, .card__header-options:hover {
     color: var(--twitter-blue);
 }
 
-.card__footer-comment:hover > .card__footer-icon, 
+.card__footer-comment-element:hover > .card__footer-icon, 
 .card__footer-share:hover > .card__footer-icon,
 .card__header-options:hover {
     box-shadow: inset 0px 0px 10px 5px rgb(29, 161, 242, 0.2),
                 0px 0px 3px 7px rgb(29, 161, 242, 0.2);
 }
 
-.card__footer-like:hover {
+.card__footer-like-element:hover {
     color: rgb(249, 24, 128);
 }
 
-.card__footer-like:hover > .card__footer-icon {
+.card__footer-like-element:hover > .card__footer-icon {
     box-shadow: inset 0px 0px 10px 5px rgb(249, 24, 128, 0.2),
     0px 0px 3px 7px rgb(249, 24, 128, 0.2);
 }
 
-.card__footer-retweet:hover {
+.card__footer-retweet-element:hover {
     color: rgb(0, 186, 124);
 }
 
-.card__footer-retweet:hover > .card__footer-icon {
+.card__footer-retweet-element:hover > .card__footer-icon {
     box-shadow: inset 0px 0px 10px 5px rgb(0, 186, 124, 0.2),
                     0px 0px 3px 7px rgb(0, 186, 124, 0.2);
 }

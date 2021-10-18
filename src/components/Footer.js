@@ -11,16 +11,22 @@ export const Footer = () => {
     return (
         <div className="card__footer">
             <div className="card__footer-comment">
-                <FaRegComment className="card__footer-icon"/>
-                <div className="card__footer-element">{tweets[0].comments}</div>
+                <div className="card__footer-comment-element">
+                    <FaRegComment className="card__footer-icon"/>
+                    <div className="card__footer-element">{tweets[0].comments}</div>
+                </div>
             </div>
             <div className="card__footer-retweet">
-                <FaRetweet className="card__footer-icon"/>
-                <div className="card__footer-element">{tweets[0].retweets}</div>
+                <div className="card__footer-retweet-element">
+                    <FaRetweet className="card__footer-icon"/>
+                    <div className="card__footer-element">{tweets[0].retweets}</div>
+                </div>
             </div>
             <div className="card__footer-like">
-                <FaRegHeart className="card__footer-icon"/>
-                <div className="card__footer-element">{tweets[0].likes}</div>
+                <div className="card__footer-like-element">
+                    <FaRegHeart className="card__footer-icon"/>
+                    <div className="card__footer-element">{tweets[0].likes}</div>
+                </div>
             </div>
             <div className="card__footer-share">
                 <CgSoftwareUpload className="card__footer-icon"/>
