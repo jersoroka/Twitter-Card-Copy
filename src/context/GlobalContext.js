@@ -7,42 +7,37 @@ export const GlobalContextProvider = ({ children }) => {
         name: "Stephen A Smith",
         handle: "@stephenasmith",
         isVerified: true,
-        bio: `The real Stephen A. Smith.
-        
-        Stream Stephen A's World daily on @ESPNPlus: es.pn/36evdIR`,
-        followers: 54000000,
+        bio: <span>The real Stephen A. Smith. {"\n\n"}Stream Stephen A's World daily on <span className="bio-link">@ESPNPlus</span> : <span className="bio-link">es.pn/36evdIR</span></span>,
+        followers: 5494487,
         following: 13,
+        isFollowing: false,
         tweets: [
-            {
-                date: "9:17 PM - Oct 9, 2021",
-                tweet: "WTH! This shit is insane. I give up! I give up! I have no idea what’s gonna happen next. Both could go with one punch",
-                comments: 223,
-                retweets: 760,
-                likes: 8500,
-                isRetweeted: false
-            },
             {
                 date: "9:06 PM - Oct 9, 2021",
                 tweet: "I came into this fight thinking @BronzeBomber needed an early knockout to win.",
-                comments: 104,
+                comments: 102,
                 retweets: 56,
                 likes: 1300,
-                isRetweeted: false
-            },
-            {
-                date: "11:56 PM - Oct 9, 2021",
-                tweet: "Ladies and Gentlemen, I thinking I’m looking at a future star. At least on some level. This kid looks special.",
-                comments: 115,
-                retweets: 49,
-                likes: 868,
                 isRetweeted: false
             }
         ]
     }
 
+    const formatStats = (stat) => {
+        var statAsString = stat.toString()
+        if (statAsString.length >= 7) {
+            return (stat / 1000000).toFixed(1) + "M";
+        } else if (statAsString.length >= 4) {
+            return (stat / 1000).toFixed(1) + "K";
+        } else {
+            return stat;
+        }
+    }
+
     return (
         <GlobalContext.Provider value={{
-            ...state
+            ...state,
+            formatStats
         }}>
             {children}
         </GlobalContext.Provider>

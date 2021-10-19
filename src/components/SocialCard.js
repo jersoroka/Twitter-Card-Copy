@@ -52,7 +52,7 @@ export const SocialCard = () => {
             <img className="card__profile" src={displayPicture} alt="stephen-a-smith-profile-picture"
                 onMouseOver={(e) => handleMouseOver(e.target.className)} 
                 onMouseLeave={() => handleMouseLeave("card__profile")}/>
-            {isHovering && !isHeaderHovering && <HoverCard handleMouseLeave={() => handleMouseLeave("card__profile")} position="hoverCard__profile"/>}
+            {!isHovering && !isHeaderHovering && <HoverCard handleMouseLeave={() => handleMouseLeave("card__profile")} position="hoverCard__profile"/>}
             <Header handleMouseOver={() => handleMouseOver("card__header-identity")} 
                     handleMouseLeave={() => handleMouseLeave("card__header-identity")}
                     isHovering={isHovering}

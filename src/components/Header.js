@@ -36,7 +36,6 @@ export const Header = ({handleMouseOver, handleMouseLeave, isHovering, isHeaderH
         }
     }
 
-
     return (
         <div className="card__header">
             <div className="card__header-info">
@@ -52,7 +51,7 @@ export const Header = ({handleMouseOver, handleMouseLeave, isHovering, isHeaderH
                 <div className="card__header-text card__header-date"
                     onMouseOver={(e) => handleDateMouseOver(e.target.className)}
                     onMouseLeave={(e) => handleDateMouseLeave(e.target.className)}>{shortDate}
-                    {isDateHovering && <div className="card__date-hover-card">{tweets[0].date}</div>}
+                    {isDateHovering && <div className="app__small-text-hover-card">{tweets[0].date}</div>}
                 </div>
             </div>
             <div><BsThreeDots className="card__header-options"/></div>
