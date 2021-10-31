@@ -4,6 +4,7 @@ export const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
     const [isFollower, setIsFollower] = useState(false);
+    const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false);
 
     const state = {
         name: "Stephen A Smith",
@@ -41,7 +42,9 @@ export const GlobalContextProvider = ({ children }) => {
             ...state,
             formatStats,
             isFollower,
-            setIsFollower
+            setIsFollower,
+            isOptionsMenuOpen,
+            setIsOptionsMenuOpen
         }}>
             {children}
         </GlobalContext.Provider>

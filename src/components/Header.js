@@ -8,9 +8,8 @@ import { OptionsMenu } from './menus/OptionsMenu';
 import "./Header.css";
 
 export const Header = ({handleMouseOver, handleMouseLeave, isHovering, isHeaderHovering}) => {
-    const {name, handle, isVerified, tweets} = useContext(GlobalContext);
+    const {name, handle, isVerified, tweets, setIsOptionsMenuOpen} = useContext(GlobalContext);
     const [isDateHovering, setIsDateHovering] = useState(false);
-    const [viewOptionsMenu, setViewOptionsMenu] = useState(false);
 
     const shortDate = tweets[0].date.split(/,| /).slice(3, 5).join(" ");
 
@@ -56,8 +55,7 @@ export const Header = ({handleMouseOver, handleMouseLeave, isHovering, isHeaderH
                     {isDateHovering && <div className="app__small-text-hover-card">{tweets[0].date}</div>}
                 </div>
             </div>
-            <div><BsThreeDots className="card__header-options" onClick={() => setViewOptionsMenu(true)}/></div>   
-            {viewOptionsMenu && <OptionsMenu/>}
+            <div><BsThreeDots className="card__header-options" onClick={() => setIsOptionsMenuOpen(true)}/></div>   
         </div>
     )
 }
