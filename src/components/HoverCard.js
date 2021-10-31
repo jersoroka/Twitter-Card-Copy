@@ -44,6 +44,7 @@ export const HoverCard = ({position, handleMouseLeave}) => {
                     {isVerified && <GoVerified className="card__header-verified"/>}
                     <div className="card__header-text">{handle}</div>
                 </div>
+                <button className="hoverCard__follow-button">Follow</button>
             </div>
             <div className="hoverCard__bio">{bio}</div>
             <div className="hoverCard__stats">
@@ -59,6 +60,7 @@ export const HoverCard = ({position, handleMouseLeave}) => {
                             <span className="hoverCard__stats-value" >{formatStats(followers)}</span> Followers
                             {isFollowersHovering && <div className="app__small-text-hover-card">{followers.toLocaleString()}</div>}
                 </span>
+                <span className="hoverCard__footer">Not followed by anyone you're following</span>
 
             </div>
             

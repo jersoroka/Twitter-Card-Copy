@@ -14,7 +14,7 @@ export const GlobalContextProvider = ({ children }) => {
         tweets: [
             {
                 date: "9:06 PM - Oct 9, 2021",
-                tweet: "I came into this fight thinking @BronzeBomber needed an early knockout to win.",
+                tweet: <span>I came into this fight thinking <span className="bio-link">@BronzeBomber</span> needed an early knockout to win.</span>,
                 comments: 102,
                 retweets: 56,
                 likes: 1300,
