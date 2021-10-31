@@ -3,14 +3,11 @@
     font-size: 15px;
 }
 
-.hoverCard__follow-button {
+.hoverCard__button {
     grid-column: 2 / 3;
     height: 35px;
     width: 85px;
     border-radius: 25px;
-    background-color: var(--twitter-black);
-    border: 1px solid var(--twitter-black);
-    color: white;
     font-size: 15px;
     letter-spacing: 0.4px;
     font-weight: bold;
@@ -19,8 +16,25 @@
     justify-self: end;
 }
 
+.hoverCard__follow-button {
+    background-color: var(--twitter-black);
+    border: 1px solid var(--twitter-black);
+    color: white;
+}
+
 .hoverCard__follow-button:hover {
     opacity: 0.8;
+}
+
+.hoverCard__following-button {
+    border: 1px solid var(--twitter-light-grey);
+    background-color: white;
+}
+
+.hoverCard__following-button:hover {
+    border: 1px solid rgb(249, 24, 128, 0.2);
+    background-color: rgb(249, 24, 128, 0.1);
+    color: rgb(249, 24, 128);
 }
 
 .hoverCard__container {

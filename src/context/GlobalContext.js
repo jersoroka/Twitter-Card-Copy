@@ -1,8 +1,10 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
+    const [isFollower, setIsFollower] = useState(false);
+
     const state = {
         name: "Stephen A Smith",
         handle: "@stephenasmith",
@@ -10,7 +12,7 @@ export const GlobalContextProvider = ({ children }) => {
         bio: <span>The real Stephen A. Smith. {"\n\n"}Stream Stephen A's World daily on <span className="bio-link">@ESPNPlus</span> : <span className="bio-link">es.pn/36evdIR</span></span>,
         followers: 5494487,
         following: 13,
-        isFollowing: false,
+        isFollower,
         tweets: [
             {
                 date: "9:06 PM - Oct 9, 2021",
@@ -37,7 +39,9 @@ export const GlobalContextProvider = ({ children }) => {
     return (
         <GlobalContext.Provider value={{
             ...state,
-            formatStats
+            formatStats,
+            isFollower,
+            setIsFollower
         }}>
             {children}
         </GlobalContext.Provider>
