@@ -1,14 +1,16 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import { GoVerified } from "react-icons/go";
 import { BsThreeDots } from "react-icons/bs";
 import { FaCircle } from "react-icons/fa";
 import { GlobalContext } from '../context/GlobalContext';
 import { HoverCard } from './HoverCard';
+import { OptionsMenu } from './menus/OptionsMenu';
 import "./Header.css";
 
 export const Header = ({handleMouseOver, handleMouseLeave, isHovering, isHeaderHovering}) => {
     const {name, handle, isVerified, tweets} = useContext(GlobalContext);
     const [isDateHovering, setIsDateHovering] = useState(false);
+    const [viewOptionsMenu, setViewOptionsMenu] = useState(false);
 
     const shortDate = tweets[0].date.split(/,| /).slice(3, 5).join(" ");
 
@@ -22,7 +24,7 @@ export const Header = ({handleMouseOver, handleMouseLeave, isHovering, isHeaderH
         div.onmouseleave = () => {
             clearTimeout(timeout);
         }
-    }
+    };
 
     const handleDateMouseLeave = (className) => {
         const div = document.getElementsByClassName(className)[0];
@@ -34,7 +36,7 @@ export const Header = ({handleMouseOver, handleMouseLeave, isHovering, isHeaderH
         div.onmouseover = () => {
             clearTimeout(timeout);
         }
-    }
+    };
 
     return (
         <div className="card__header">
@@ -54,7 +56,8 @@ export const Header = ({handleMouseOver, handleMouseLeave, isHovering, isHeaderH
                     {isDateHovering && <div className="app__small-text-hover-card">{tweets[0].date}</div>}
                 </div>
             </div>
-            <div><BsThreeDots className="card__header-options"/></div>
+            <div><BsThreeDots className="card__header-options" onClick={() => setViewOptionsMenu(true)}/></div>   
+            {viewOptionsMenu && <OptionsMenu/>}
         </div>
     )
 }

@@ -1,0 +1,10 @@
+.optionsMenu__container {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border: 1px solid black;
+    top: 0px;
+    right: 0px;
+    background-color: white;
+    z-index: 0;
+}
