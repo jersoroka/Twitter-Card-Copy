@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useRef, useState } from 'react'
 
 export const GlobalContext = createContext();
 
@@ -37,6 +37,25 @@ export const GlobalContextProvider = ({ children }) => {
         }
     }
 
+    let useClickOutside = (handler) => {
+        let domNode = useRef();
+
+        useEffect(() => {
+            let handlerChecker = (event) => {
+                if (domNode && !domNode?.current.contains(event.target)) {
+                    handler();
+                }
+            };
+            
+            document.addEventListener("mousedown", handlerChecker);
+    
+            return () => {
+                document.removeEventListener("mousedown",handlerChecker)
+            };
+        });
+
+    };
+
     return (
         <GlobalContext.Provider value={{
             ...state,
@@ -44,7 +63,8 @@ export const GlobalContextProvider = ({ children }) => {
             isFollower,
             setIsFollower,
             isOptionsMenuOpen,
-            setIsOptionsMenuOpen
+            setIsOptionsMenuOpen,
+            useClickOutside
         }}>
             {children}
         </GlobalContext.Provider>

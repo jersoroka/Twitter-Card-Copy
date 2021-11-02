@@ -8,9 +8,7 @@ import { Footer } from "./Footer";
 import { OptionsMenu } from './menus/OptionsMenu';
 
 export const SocialCard = () => {
-
     const {tweets, isOptionsMenuOpen, setIsOptionsMenuOpen} = useContext(GlobalContext)
-    
     const [isHovering, setIsHovering] = useState(false);
     const [isHeaderHovering, setIsHeaderHovering] = useState(false);
 
@@ -60,7 +58,7 @@ export const SocialCard = () => {
                     isHeaderHovering={isHeaderHovering}/>
             <div className="card__body">{tweets[0].tweet}</div>
             <Footer/>
-            {isOptionsMenuOpen && <OptionsMenu/>}
+            {isOptionsMenuOpen && <OptionsMenu setIsOptionsMenuOpen={setIsOptionsMenuOpen}/>}
         </div>
     )
 }
