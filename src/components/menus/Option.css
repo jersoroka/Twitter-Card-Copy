@@ -2,19 +2,20 @@
     display: grid;
     grid-template-columns: min-content auto;
     grid-template-rows: 40px;
-    column-gap: 10px;
-    /* align-content: center; */
-    border: 1px solid black;
+    column-gap: 15px;
     align-items: center;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
 }
 
-.option__icon {
-    border: 1px solid black;
-    width: 25px;
-    height: 25px;
+.option__container:hover {
+    background: var(--twitter-extra-extra-light-grey);
+}
+
+.option__icon-container>* {
+    width: 23px;
+    height: 23px;
+    color: var(--twitter-light-grey);
 }
 
 .option__text {
-    border: 1px solid black;
 }
