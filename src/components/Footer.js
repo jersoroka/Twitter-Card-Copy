@@ -6,7 +6,7 @@ import { GlobalContext } from '../context/GlobalContext';
 
 export const Footer = () => {
 
-    const {tweets} = useContext(GlobalContext);
+    const {tweets, setIsRetweetMenuOpen, setIsShareMenuOpen} = useContext(GlobalContext);
 
     return (
         <div className="card__footer">
@@ -17,7 +17,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="card__footer-retweet">
-                <div className="card__footer-retweet-element">
+                <div className="card__footer-retweet-element" onClick={() => setIsRetweetMenuOpen(true)}>
                     <FaRetweet className="card__footer-icon"/>
                     <div className="card__footer-element">{tweets[0].retweets}</div>
                 </div>
@@ -28,7 +28,7 @@ export const Footer = () => {
                     <div className="card__footer-element">{tweets[0].likes}</div>
                 </div>
             </div>
-            <div className="card__footer-share">
+            <div className="card__footer-share" onClick={() => setIsShareMenuOpen(true)}>
                 <CgSoftwareUpload className="card__footer-icon"/>
             </div>
         </div>

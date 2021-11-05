@@ -4,15 +4,24 @@
     grid-template-rows: 40px;
     column-gap: 15px;
     align-items: center;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 15px 5px 15px;
 }
 
 .option__container:hover {
     background: var(--twitter-extra-extra-light-grey);
 }
 
+.option__icon-container {
+    align-items: center;
+}
+
 .option__icon-container>* {
-    width: 23px;
-    height: 23px;
-    color: var(--twitter-light-grey);
+    width: 20px;
+    height: 20px;
+    color: var(--twitter-dark-grey);
+}
+
+.option__text {
+    align-items: center;
+    font-size: 15px;
 }

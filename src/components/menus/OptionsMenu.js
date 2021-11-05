@@ -1,7 +1,8 @@
 import React, { useContext, useRef } from 'react'
 import { GlobalContext } from '../../context/GlobalContext';
-import "./Menu.css"
-import "./Option.css"
+import "./Menu.css";
+import "./Option.css";
+import "./OptionsMenu.css";
 import { Option } from './Option';
 import { FaUserTimes } from 'react-icons/fa'
 import { MdPostAdd } from 'react-icons/md';
@@ -9,7 +10,7 @@ import { BiBlock, BiVolumeMute } from 'react-icons/bi';
 import { ImEmbed } from 'react-icons/im';
 import { IoFlagOutline } from 'react-icons/io5';
 
-export const Menu = ({ setIsOptionsMenuOpen }) => {
+export const OptionsMenu = ({ setIsOptionsMenuOpen }) => {
     const { handle, useClickOutside } = useContext(GlobalContext);
 
     let domNode = useRef();
@@ -18,7 +19,7 @@ export const Menu = ({ setIsOptionsMenuOpen }) => {
     });
 
     return (
-        <div className="menu__container" ref={domNode}>
+        <div className="menu__container optionsMenu__container" ref={domNode}>
             <Option icon={<FaUserTimes/>} text={"Unfollow " + handle}/>
             <Option icon={<MdPostAdd/>} text={"Add/remove " + handle + " from Lists"}/>
             <Option icon={<BiVolumeMute/>} text={"Mute " + handle}/>

@@ -5,6 +5,8 @@ export const GlobalContext = createContext();
 export const GlobalContextProvider = ({ children }) => {
     const [isFollower, setIsFollower] = useState(false);
     const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false);
+    const [isShareMenuOpen, setIsShareMenuOpen] = useState(false);
+    const [isRetweetMenuOpen, setIsRetweetMenuOpen] = useState(false);
 
     const state = {
         name: "Stephen A Smith",
@@ -62,7 +64,11 @@ export const GlobalContextProvider = ({ children }) => {
             setIsFollower,
             isOptionsMenuOpen,
             setIsOptionsMenuOpen,
-            useClickOutside
+            useClickOutside,
+            isShareMenuOpen,
+            setIsShareMenuOpen,
+            isRetweetMenuOpen,
+            setIsRetweetMenuOpen
         }}>
             {children}
         </GlobalContext.Provider>

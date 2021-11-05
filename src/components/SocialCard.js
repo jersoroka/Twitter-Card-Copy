@@ -5,10 +5,12 @@ import { GlobalContext } from '../context/GlobalContext';
 import { HoverCard } from "./HoverCard";
 import { Header } from "./Header"
 import { Footer } from "./Footer";
-import { Menu } from './menus/Menu';
+import { OptionsMenu } from './menus/OptionsMenu';
+import { ShareMenu } from './menus/ShareMenu';
+import { RetweetMenu } from './menus/RetweetMenu';
 
 export const SocialCard = () => {
-    const {tweets, isOptionsMenuOpen, setIsOptionsMenuOpen} = useContext(GlobalContext)
+    const {tweets, isOptionsMenuOpen, setIsOptionsMenuOpen, isRetweetMenuOpen, setIsRetweetMenuOpen, isShareMenuOpen, setIsShareMenuOpen} = useContext(GlobalContext)
     const [isHovering, setIsHovering] = useState(false);
     const [isHeaderHovering, setIsHeaderHovering] = useState(false);
 
@@ -58,7 +60,9 @@ export const SocialCard = () => {
                     isHeaderHovering={isHeaderHovering}/>
             <div className="card__body">{tweets[0].tweet}</div>
             <Footer/>
-            {isOptionsMenuOpen && <Menu setIsOptionsMenuOpen={setIsOptionsMenuOpen}/>}
+            {isOptionsMenuOpen && <OptionsMenu setIsOptionsMenuOpen={setIsOptionsMenuOpen}/>}
+            {isShareMenuOpen && <ShareMenu setIsShareMenuOpen={setIsShareMenuOpen}/>}
+            {isRetweetMenuOpen && <RetweetMenu setIsRetweetMenuOpen={setIsRetweetMenuOpen}/>}
         </div>
     )
 }
