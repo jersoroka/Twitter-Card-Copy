@@ -5,7 +5,7 @@ import { GlobalContext } from '../context/GlobalContext';
 import { HoverCard } from "./HoverCard";
 import { Header } from "./Header"
 import { Footer } from "./Footer";
-import { OptionsMenu } from './menus/OptionsMenu';
+import { Menu } from './menus/Menu';
 
 export const SocialCard = () => {
     const {tweets, isOptionsMenuOpen, setIsOptionsMenuOpen} = useContext(GlobalContext)
@@ -58,7 +58,7 @@ export const SocialCard = () => {
                     isHeaderHovering={isHeaderHovering}/>
             <div className="card__body">{tweets[0].tweet}</div>
             <Footer/>
-            {isOptionsMenuOpen && <OptionsMenu setIsOptionsMenuOpen={setIsOptionsMenuOpen}/>}
+            {isOptionsMenuOpen && <Menu setIsOptionsMenuOpen={setIsOptionsMenuOpen}/>}
         </div>
     )
 }

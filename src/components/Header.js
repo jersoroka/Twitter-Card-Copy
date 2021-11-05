@@ -4,7 +4,6 @@ import { BsThreeDots } from "react-icons/bs";
 import { FaCircle } from "react-icons/fa";
 import { GlobalContext } from '../context/GlobalContext';
 import { HoverCard } from './HoverCard';
-import { OptionsMenu } from './menus/OptionsMenu';
 import "./Header.css";
 
 export const Header = ({handleMouseOver, handleMouseLeave, isHovering, isHeaderHovering}) => {
