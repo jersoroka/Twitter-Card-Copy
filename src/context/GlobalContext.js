@@ -37,12 +37,10 @@ export const GlobalContextProvider = ({ children }) => {
         }
     }
 
-    let useClickOutside = (handler) => {
-        let domNode = useRef();
-
+    let useClickOutside = (domNode, handler) => {
         useEffect(() => {
             let handlerChecker = (event) => {
-                if (domNode && !domNode?.current.contains(event.target)) {
+                if (domNode.current && !domNode?.current.contains(event.target)) {
                     handler();
                 }
             };
@@ -52,7 +50,7 @@ export const GlobalContextProvider = ({ children }) => {
             return () => {
                 document.removeEventListener("mousedown",handlerChecker)
             };
-        });
+        }, [domNode]);
 
     };
 

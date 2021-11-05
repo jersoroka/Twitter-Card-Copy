@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { GlobalContext } from '../../context/GlobalContext';
 import "./OptionsMenu.css"
 import "./Option.css"
@@ -12,7 +12,8 @@ import { IoFlagOutline } from 'react-icons/io5';
 export const OptionsMenu = ({ setIsOptionsMenuOpen }) => {
     const { handle, useClickOutside } = useContext(GlobalContext);
 
-    let domNode = useClickOutside(() => {
+    let domNode = useRef();
+    useClickOutside(domNode, () => {
         setIsOptionsMenuOpen(false);
     });
 
