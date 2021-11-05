@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { GlobalContext } from '../../context/GlobalContext';
 import './Menu.css';
 import './ShareMenu.css';
@@ -9,7 +9,7 @@ import { CgSoftwareUpload } from "react-icons/cg";
 import { Option } from './Option';
 
 export const ShareMenu = ({ setIsShareMenuOpen }) => {
-    const { useClickOutside } = useContext(GlobalContext);
+    const { isBookmarked, setIsBookmarked, useClickOutside } = useContext(GlobalContext);
 
     let domNode = useRef();
     useClickOutside(domNode, () => {
@@ -18,7 +18,13 @@ export const ShareMenu = ({ setIsShareMenuOpen }) => {
     return (
         <div className="menu__container shareMenu__container" ref={domNode}>
             <Option icon={<AiOutlineMail/>} text={"Send via Direct Message"}/>
-            <Option icon={<MdOutlineBookmarkAdd/>} text={"Bookmark"}/>
+            <Option 
+                icon={<MdOutlineBookmarkAdd/>} 
+                text={isBookmarked ? "Remove Tweet from Bookmarks" : "Bookmark"}
+                onClick={() => {
+                    setIsBookmarked(!isBookmarked);
+                    setIsShareMenuOpen(false);
+                }}/>
             <Option icon={<BsLink45Deg/>} text={"Copy link to Tweet"}/>
             <Option icon={<CgSoftwareUpload/>} text={"Share Tweet via ..."}/>
         </div>

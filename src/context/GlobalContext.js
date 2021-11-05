@@ -3,6 +3,7 @@ import React, { createContext, useEffect, useRef, useState } from 'react'
 export const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
+    const [isBookmarked, setIsBookmarked] = useState(false);
     const [isFollower, setIsFollower] = useState(false);
     const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false);
     const [isShareMenuOpen, setIsShareMenuOpen] = useState(false);
@@ -60,6 +61,8 @@ export const GlobalContextProvider = ({ children }) => {
         <GlobalContext.Provider value={{
             ...state,
             formatStats,
+            isBookmarked,
+            setIsBookmarked,
             isFollower,
             setIsFollower,
             isOptionsMenuOpen,

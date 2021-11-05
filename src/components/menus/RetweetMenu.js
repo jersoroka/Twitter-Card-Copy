@@ -7,7 +7,7 @@ import { BsPencil } from 'react-icons/bs';
 import { Option } from './Option';
 
 export const RetweetMenu = ({ setIsRetweetMenuOpen }) => {
-    const { useClickOutside } = useContext(GlobalContext);
+    const { useClickOutside,  } = useContext(GlobalContext);
 
     let domNode = useRef();
     useClickOutside(domNode, () => {
