@@ -8,6 +8,7 @@ export const GlobalContextProvider = ({ children }) => {
     const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false);
     const [isShareMenuOpen, setIsShareMenuOpen] = useState(false);
     const [isRetweetMenuOpen, setIsRetweetMenuOpen] = useState(false);
+    const [isMute, setIsMute] = useState(false);
 
     const state = {
         name: "Stephen A Smith",
@@ -65,6 +66,8 @@ export const GlobalContextProvider = ({ children }) => {
             setIsBookmarked,
             isFollower,
             setIsFollower,
+            isMute,
+            setIsMute,
             isOptionsMenuOpen,
             setIsOptionsMenuOpen,
             useClickOutside,
