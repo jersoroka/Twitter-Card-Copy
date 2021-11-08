@@ -6,7 +6,7 @@ import "./OptionsMenu.css";
 import { Option } from './Option';
 import { FaUserPlus, FaUserTimes } from 'react-icons/fa'
 import { MdPostAdd } from 'react-icons/md';
-import { BiBlock, BiVolumeMute } from 'react-icons/bi';
+import { BiBlock, BiVolumeFull, BiVolumeMute } from 'react-icons/bi';
 import { ImEmbed } from 'react-icons/im';
 import { IoFlagOutline } from 'react-icons/io5';
 import { ToastContainer, toast } from 'react-toastify';
@@ -33,7 +33,7 @@ export const OptionsMenu = ({ setIsOptionsMenuOpen }) => {
             }
             <Option icon={<MdPostAdd/>} text={"Add/remove " + handle + " from Lists"}/>
             {isMute ?
-                <Option icon={<BiVolumeMute/>} text={"Unmute " + handle} onClick={() => handleMute(false)}/> :
+                <Option icon={<BiVolumeFull/>} text={"Unmute " + handle} onClick={() => handleMute(false)}/> :
                 <Option icon={<BiVolumeMute/>} text={"Mute " + handle} onClick={() => handleMute(true)}/>
             }
             <Option icon={<BiBlock/>} text={"Block " + handle}/>
