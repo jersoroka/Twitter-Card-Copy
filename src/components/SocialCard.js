@@ -8,6 +8,8 @@ import { Footer } from "./Footer";
 import { OptionsMenu } from './menus/OptionsMenu';
 import { ShareMenu } from './menus/ShareMenu';
 import { RetweetMenu } from './menus/RetweetMenu';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const SocialCard = () => {
     const {tweets, isOptionsMenuOpen, setIsOptionsMenuOpen, isRetweetMenuOpen, setIsRetweetMenuOpen, isShareMenuOpen, setIsShareMenuOpen} = useContext(GlobalContext)
@@ -47,7 +49,12 @@ export const SocialCard = () => {
                 clearTimeout(timeout);
             };
         }
-    }
+    };
+
+    const handleBookmark = (isBookmarked) => {
+        isBookmarked ? toast("Tweet removed from your Bookmarks") : toast("Tweet added to your Bookmarks") ;
+    };
+
     return (
         <div className="card">
             <img className="card__profile" src={displayPicture} alt="stephen-a-smith-profile"
@@ -61,8 +68,20 @@ export const SocialCard = () => {
             <div className="card__body">{tweets[0].tweet}</div>
             <Footer/>
             {isOptionsMenuOpen && <OptionsMenu setIsOptionsMenuOpen={setIsOptionsMenuOpen}/>}
-            {isShareMenuOpen && <ShareMenu setIsShareMenuOpen={setIsShareMenuOpen}/>}
+            {isShareMenuOpen && <ShareMenu setIsShareMenuOpen={setIsShareMenuOpen}  handleBookmark={handleBookmark}/>}
             {isRetweetMenuOpen && <RetweetMenu setIsRetweetMenuOpen={setIsRetweetMenuOpen}/>}
+            <ToastContainer toastClassName="optionsMenu__mute-toaster"
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={false}
+                pauseOnHover
+                closeButton={false}
+            />
         </div>
     )
 }

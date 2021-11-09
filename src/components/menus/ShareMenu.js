@@ -8,13 +8,14 @@ import { BsLink45Deg } from 'react-icons/bs';
 import { CgSoftwareUpload } from "react-icons/cg";
 import { Option } from './Option';
 
-export const ShareMenu = ({ setIsShareMenuOpen }) => {
+export const ShareMenu = ({ handleBookmark, setIsShareMenuOpen }) => {
     const { isBookmarked, setIsBookmarked, useClickOutside } = useContext(GlobalContext);
 
     let domNode = useRef();
     useClickOutside(domNode, () => {
         setIsShareMenuOpen(false);
     });
+
     return (
         <div className="menu__container shareMenu__container" ref={domNode}>
             <Option icon={<AiOutlineMail/>} text={"Send via Direct Message"}/>
@@ -23,6 +24,7 @@ export const ShareMenu = ({ setIsShareMenuOpen }) => {
                 text={isBookmarked ? "Remove Tweet from Bookmarks" : "Bookmark"}
                 onClick={() => {
                     setIsBookmarked(!isBookmarked);
+                    handleBookmark(isBookmarked);
                     setIsShareMenuOpen(false);
                 }}/>
             <Option icon={<BsLink45Deg/>} text={"Copy link to Tweet"}/>
