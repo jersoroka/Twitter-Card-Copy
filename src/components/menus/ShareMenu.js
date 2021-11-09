@@ -8,7 +8,7 @@ import { BsLink45Deg } from 'react-icons/bs';
 import { CgSoftwareUpload } from "react-icons/cg";
 import { Option } from './Option';
 
-export const ShareMenu = ({ handleBookmark, setIsShareMenuOpen }) => {
+export const ShareMenu = ({ handleCopy, handleBookmark, setIsShareMenuOpen }) => {
     const { isBookmarked, setIsBookmarked, useClickOutside } = useContext(GlobalContext);
 
     let domNode = useRef();
@@ -27,7 +27,12 @@ export const ShareMenu = ({ handleBookmark, setIsShareMenuOpen }) => {
                     handleBookmark(isBookmarked);
                     setIsShareMenuOpen(false);
                 }}/>
-            <Option icon={<BsLink45Deg/>} text={"Copy link to Tweet"}/>
+            <Option 
+                icon={<BsLink45Deg/>} 
+                text={"Copy link to Tweet"}
+                onClick={() => {
+                    handleCopy();
+                }}/>
             <Option icon={<CgSoftwareUpload/>} text={"Share Tweet via ..."}/>
         </div>
     )

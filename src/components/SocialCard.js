@@ -29,7 +29,7 @@ export const SocialCard = () => {
         div.onmouseleave = () => {
             clearTimeout(timeout);
         }
-    }
+    };
 
     const handleMouseLeave = (element) => {
         const hoverCard = document.getElementsByClassName("hoverCard__container")[0];
@@ -68,9 +68,9 @@ export const SocialCard = () => {
             <div className="card__body">{tweets[0].tweet}</div>
             <Footer/>
             {isOptionsMenuOpen && <OptionsMenu setIsOptionsMenuOpen={setIsOptionsMenuOpen}/>}
-            {isShareMenuOpen && <ShareMenu setIsShareMenuOpen={setIsShareMenuOpen}  handleBookmark={handleBookmark}/>}
+            {isShareMenuOpen && <ShareMenu setIsShareMenuOpen={setIsShareMenuOpen}  handleBookmark={handleBookmark} handleCopy={() => toast('Copied to clipboard')}/>}
             {isRetweetMenuOpen && <RetweetMenu setIsRetweetMenuOpen={setIsRetweetMenuOpen}/>}
-            <ToastContainer toastClassName="optionsMenu__mute-toaster"
+            <ToastContainer enableMultiContainer toastClassName="optionsMenu__mute-toaster"
                 position="bottom-center"
                 autoClose={5000}
                 hideProgressBar
