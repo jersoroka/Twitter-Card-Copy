@@ -36,7 +36,7 @@ export const OptionsMenu = ({ setIsOptionsMenuOpen }) => {
                 <Option icon={<BiVolumeFull/>} text={"Unmute " + handle} onClick={() => handleMute(false)}/> :
                 <Option icon={<BiVolumeMute/>} text={"Mute " + handle} onClick={() => handleMute(true)}/>
             }
-            <Option icon={<BiBlock/>} text={"Block " + handle}/>
+            <Option icon={<BiBlock/>} text={"Block " + handle} onClick={() => toast('Successfully blocked.')}/>
             <Option icon={<ImEmbed/>} text={"Embed Tweet"}/>
             <Option icon={<IoFlagOutline/>} text={"Report Tweet"}/>
             <ToastContainer toastClassName="optionsMenu__mute-toaster"

@@ -7,7 +7,7 @@ import { BsPencil } from 'react-icons/bs';
 import { Option } from './Option';
 
 export const RetweetMenu = ({ setIsRetweetMenuOpen }) => {
-    const { useClickOutside,  } = useContext(GlobalContext);
+    const { useClickOutside, isRetweeted, setIsRetweeted, retweets, setRetweets } = useContext(GlobalContext);
 
     let domNode = useRef();
     useClickOutside(domNode, () => {
@@ -16,7 +16,14 @@ export const RetweetMenu = ({ setIsRetweetMenuOpen }) => {
 
     return (
         <div className="menu__container retweetMenu__container" ref={domNode}>
-            <Option icon={<FaRetweet/>} text={"Retweet"}/>
+            <Option 
+                icon={<FaRetweet/>} 
+                text={isRetweeted ? "Undo Retweet" : "Retweet"} 
+                onClick={() => {
+                    isRetweeted ? setRetweets(retweets - 1) : setRetweets(retweets + 1);
+                    setIsRetweeted(!isRetweeted);
+                    setIsRetweetMenuOpen(false);
+                }}/>
             <Option icon={<BsPencil/>} text={"Quote Tweet"}/>
         </div>
     )

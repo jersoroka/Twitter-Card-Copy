@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useRef, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 export const GlobalContext = createContext();
 
@@ -29,6 +29,9 @@ export const GlobalContextProvider = ({ children }) => {
             }
         ]
     }
+
+    const [retweets, setRetweets] = useState(state.tweets[0].retweets);
+    const [isRetweeted, setIsRetweeted] = useState(false);
 
     const formatStats = (stat) => {
         var statAsString = stat.toString()
@@ -74,7 +77,11 @@ export const GlobalContextProvider = ({ children }) => {
             isShareMenuOpen,
             setIsShareMenuOpen,
             isRetweetMenuOpen,
-            setIsRetweetMenuOpen
+            setIsRetweetMenuOpen,
+            retweets,
+            setRetweets,
+            isRetweeted,
+            setIsRetweeted
         }}>
             {children}
         </GlobalContext.Provider>
