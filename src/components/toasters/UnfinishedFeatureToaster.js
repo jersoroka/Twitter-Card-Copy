@@ -1,12 +1,12 @@
 import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './UnfinishedFeatureToaster.css';
+import './Toaster.css';
 
 const UnfinishedFeatureToaster = () => {
 
     return (
-        <ToastContainer enableMultiContainer containerId={'unfinished-feature'} toastClassName="unfinishedFeatureToaster"
+        <ToastContainer enableMultiContainer containerId={'unfinished-feature'} toastClassName="toaster unfinishedFeatureToaster"
         position="bottom-center"
         autoClose={2000}
         hideProgressBar
@@ -21,7 +21,7 @@ const UnfinishedFeatureToaster = () => {
     )
 }
 
-export function unfinishedFeature()  {
+export function triggerUnfinishedFeatureToaster()  {
     toast('This feature has not been implemented', {containerId: 'unfinished-feature'});
 }
 

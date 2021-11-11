@@ -1,11 +1,17 @@
-.unfinishedFeatureToaster {
+.successToaster {
+    background-color: var(--twitter-blue) !important;
+}
+
+.toaster {
     color: white !important;
-    background-color: red !important;
     font-weight: bolder;
     font-size: 14px;
     text-align: center;
     min-height: min-content !important;
-    width: min-content;
+}
+
+.unfinishedFeatureToaster {
+    background-color: red !important;
     overflow: visible;
     white-space: nowrap;
 }

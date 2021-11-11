@@ -3,12 +3,3 @@
     right: 0px;
     width: 350px;
 }
-
-.optionsMenu__mute-toaster {
-    color: white !important;
-    background-color: var(--twitter-blue) !important;
-    font-weight: bolder;
-    font-size: 14px;
-    text-align: center;
-    min-height: min-content !important;
-}

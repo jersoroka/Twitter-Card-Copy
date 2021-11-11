@@ -8,8 +8,10 @@ import { Footer } from "./Footer";
 import { OptionsMenu } from './menus/OptionsMenu';
 import { ShareMenu } from './menus/ShareMenu';
 import { RetweetMenu } from './menus/RetweetMenu';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UnfinishedFeatureToaster from './toasters/UnfinishedFeatureToaster';
+import SuccessToaster from './toasters/SuccessToaster';
 
 export const SocialCard = () => {
     const {tweets, isOptionsMenuOpen, setIsOptionsMenuOpen, isRetweetMenuOpen, setIsRetweetMenuOpen, isShareMenuOpen, setIsShareMenuOpen} = useContext(GlobalContext)
@@ -52,7 +54,7 @@ export const SocialCard = () => {
     };
 
     const handleBookmark = (isBookmarked) => {
-        isBookmarked ? toast("Tweet removed from your Bookmarks") : toast("Tweet added to your Bookmarks") ;
+        isBookmarked ? toast("Tweet removed from your Bookmarks", {containerId: 'success'}) : toast("Tweet added to your Bookmarks", {containerId: 'success'}) ;
     };
 
     return (
@@ -68,20 +70,10 @@ export const SocialCard = () => {
             <div className="card__body">{tweets[0].tweet}</div>
             <Footer/>
             {isOptionsMenuOpen && <OptionsMenu setIsOptionsMenuOpen={setIsOptionsMenuOpen}/>}
-            {isShareMenuOpen && <ShareMenu setIsShareMenuOpen={setIsShareMenuOpen}  handleBookmark={handleBookmark} handleCopy={() => toast('Copied to clipboard')}/>}
+            {isShareMenuOpen && <ShareMenu setIsShareMenuOpen={setIsShareMenuOpen}  handleBookmark={handleBookmark} handleCopy={() => toast('Copied to clipboard', {containerId: 'success'})}/>}
             {isRetweetMenuOpen && <RetweetMenu setIsRetweetMenuOpen={setIsRetweetMenuOpen}/>}
-            <ToastContainer enableMultiContainer toastClassName="optionsMenu__mute-toaster"
-                position="bottom-center"
-                autoClose={5000}
-                hideProgressBar
-                newestOnTop={false}
-                closeOnClick={false}
-                rtl={false}
-                pauseOnFocusLoss
-                draggable={false}
-                pauseOnHover
-                closeButton={false}
-            />
+            <SuccessToaster/>
+            <UnfinishedFeatureToaster/>
         </div>
     )
 }

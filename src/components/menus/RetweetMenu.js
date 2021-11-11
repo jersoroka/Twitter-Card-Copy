@@ -5,6 +5,7 @@ import './RetweetMenu.css';
 import { FaRetweet} from "react-icons/fa";
 import { BsPencil } from 'react-icons/bs';
 import { Option } from './Option';
+import { triggerUnfinishedFeatureToaster } from '../toasters/UnfinishedFeatureToaster';
 
 export const RetweetMenu = ({ setIsRetweetMenuOpen }) => {
     const { useClickOutside, isRetweeted, setIsRetweeted, retweets, setRetweets } = useContext(GlobalContext);
@@ -24,7 +25,7 @@ export const RetweetMenu = ({ setIsRetweetMenuOpen }) => {
                     setIsRetweeted(!isRetweeted);
                     setIsRetweetMenuOpen(false);
                 }}/>
-            <Option icon={<BsPencil/>} text={"Quote Tweet"}/>
+            <Option icon={<BsPencil/>} text={"Quote Tweet"} onClick={() => triggerUnfinishedFeatureToaster()}/>
         </div>
     )
 }
