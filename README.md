@@ -18,15 +18,14 @@ yarn run start
 ```
 
 ## Visuals
+
 <img src="./demo.gif" width=400px/>
-<br>
 
 ## Author
 
 👤 **Jeremy Soroka**
 
 * Github: [@jersoroka](https://github.com/jersoroka)
-
 
 ## Show your support
 
