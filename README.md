@@ -1,9 +1,11 @@
-<h1 align="center">Welcome to Twitter Card Copy with React 👋</h1>
+<h1 align="center">Welcome to Twitter Card Copy 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Front-end copy of a Twitter card using React.
+> Description
+
+### 🏠 [Homepage](https://jersoroka.github.io/twitter-card-copy)
 
 ## Install
 
@@ -17,9 +19,11 @@ yarn install
 yarn run start
 ```
 
-## Visuals
+## Run tests
 
-<img src="./demo.gif" width=400px/>
+```sh
+yarn run test
+```
 
 ## Author
 
