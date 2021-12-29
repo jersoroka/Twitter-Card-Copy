@@ -3,9 +3,9 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Description
+> This project is a front-end copy of a single Twitter card using React.
 
-### 🏠 [Homepage](https://jersoroka.github.io/twitter-card-copy)
+### 🏠 [Demo](https://jersoroka.github.io/twitter-card-copy)
 
 ## Install
 
