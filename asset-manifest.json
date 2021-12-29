@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/twitter-card-copy/static/css/main.c666b729.chunk.css",
+    "main.js": "/twitter-card-copy/static/js/main.d71918e0.chunk.js",
+    "main.js.map": "/twitter-card-copy/static/js/main.d71918e0.chunk.js.map",
+    "runtime-main.js": "/twitter-card-copy/static/js/runtime-main.31a5bd32.js",
+    "runtime-main.js.map": "/twitter-card-copy/static/js/runtime-main.31a5bd32.js.map",
+    "static/css/2.58a45539.chunk.css": "/twitter-card-copy/static/css/2.58a45539.chunk.css",
+    "static/js/2.093a5e57.chunk.js": "/twitter-card-copy/static/js/2.093a5e57.chunk.js",
+    "static/js/2.093a5e57.chunk.js.map": "/twitter-card-copy/static/js/2.093a5e57.chunk.js.map",
+    "index.html": "/twitter-card-copy/index.html",
+    "static/css/2.58a45539.chunk.css.map": "/twitter-card-copy/static/css/2.58a45539.chunk.css.map",
+    "static/css/main.c666b729.chunk.css.map": "/twitter-card-copy/static/css/main.c666b729.chunk.css.map",
+    "static/js/2.093a5e57.chunk.js.LICENSE.txt": "/twitter-card-copy/static/js/2.093a5e57.chunk.js.LICENSE.txt",
+    "static/media/stephen-a-smith-profile.313f5d3e.jpg": "/twitter-card-copy/static/media/stephen-a-smith-profile.313f5d3e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.31a5bd32.js",
+    "static/css/2.58a45539.chunk.css",
+    "static/js/2.093a5e57.chunk.js",
+    "static/css/main.c666b729.chunk.css",
+    "static/js/main.d71918e0.chunk.js"
+  ]
+}
